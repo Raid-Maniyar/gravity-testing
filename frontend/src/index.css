@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans antialiased text-gray-800 bg-gray-50 transition-colors duration-300;
+  }
+  
+  /* Dark mode base styles */
+  .dark body {
+    @apply text-gray-100 bg-dark-200;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-glass rounded-2xl;
+  }
+
+  .dark .glass-panel {
+    @apply bg-dark-100/70 border-gray-700/50 shadow-glass;
+  }
+  
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-lg border border-white/40 shadow-sm rounded-xl transition-all duration-300 hover:shadow-md hover:-translate-y-1;
+  }
+
+  .dark .glass-card {
+    @apply bg-dark-100/80 border-gray-700/50 hover:shadow-glow hover:-translate-y-1;
+  }
+
+  .btn-primary {
+    @apply px-6 py-3 bg-gradient-to-r from-primary-500 to-primary-600 text-white font-medium rounded-lg shadow-md hover:shadow-lg hover:from-primary-600 hover:to-primary-700 transition-all duration-300 transform hover:scale-105 active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 bg-white text-gray-800 border border-gray-200 font-medium rounded-lg shadow-sm hover:bg-gray-50 transition-all duration-300;
+  }
+  
+  .dark .btn-secondary {
+    @apply bg-dark-100 text-gray-200 border-gray-700 hover:bg-dark-200;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 bg-white/50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all backdrop-blur-sm;
+  }
+  
+  .dark .input-field {
+    @apply bg-dark-200/50 border-gray-700 text-white focus:ring-primary-500;
+  }
+}
