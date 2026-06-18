@@ -4,6 +4,7 @@ import cors from 'cors';
 import connectDB from './config/db.js';
 
 // Load environment variables
+
 dotenv.config();
 
 // Connect to database
